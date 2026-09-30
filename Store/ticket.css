@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: gray;
+}
+
+.ticket-container {
+    background-color: rgb(226, 226, 226);
+    height: 400px;
+    width: 350px;
+    padding: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 0.427);
+}
+
+
+.ticket-header {
+    border-bottom: 2px dotted black;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.ticket-header h1 {
+    font-size: 1.5rem;
+}
+
+.ticket-info {
+    border-bottom: 2px dotted black;
+    padding: 10px;
+}
+
+.ticket-description {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    border-bottom: 2px dotted black;
+}
+
+.detail {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ticket-total {
+    padding: 10px;
+
+}
+
+.ticket-footer {
+    padding: 10px;
+
+    text-align: center;
+
+    font-size: 1.2rem;
+    font-weight: bold;
+
+}
