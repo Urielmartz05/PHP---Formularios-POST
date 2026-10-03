@@ -1,0 +1,375 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+main{
+    width: 100%;
+    height: 90vh;
+    background-color: #2b2b2b;
+
+    display: grid;
+    place-items: center;
+    padding-top: 50px;
+}
+
+.pokemon-result-main {
+    width: 52%;
+    height: 80%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.pokemon-result-container {
+    width: 100%;
+    height: 100%;
+    background-color: #991b1b;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.pokemon-stats-container {
+    width: 100%;
+    height: 100%;
+    background-color: #00327e;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.result-header,
+.stats-header {
+    width: 100%;
+    padding: 12px 18px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.result-header h1,
+.stats-header h2 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1f2937;
+    text-transform: capitalize;
+    margin: 0;
+    line-height: 1.2;
+}
+
+
+.result-img-container {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 0 6px 0;
+}
+
+.frame {
+    width: 90%;
+    height: 100%;
+    background: radial-gradient(circle at center, #ffffff 25%, #f8fafc 60%, #e2e8f0 100%);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.2), inset 0 0 25px rgba(255, 255, 255, 0.8);
+    position: relative;
+}
+
+.frame img {
+    width: 95%;
+    height: 95%;
+    object-fit: contain;
+    image-rendering: pixelated;
+    transform: scale(1.5);
+    transform-origin: center center;
+    display: block;
+}
+
+.pokemon-bottom-info {
+    width: 90%;
+    margin: 15px auto 20px auto;
+    flex: 1;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 12px;
+    padding: 14px 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 20px;
+}
+
+.pokemon-data,
+.evolutions {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.info-divider {
+    width: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 2px 0;
+}
+
+.pokemon-data .data-row,
+.evolutions p {
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: 600;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.pokemon-data .data-label {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.pokemon-data .data-val {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 15px;
+    text-transform: none;
+}
+
+.types-wrapper {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.type-tag {
+    background-color: rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    text-transform: capitalize;
+}
+
+.evolutions p span {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 15px;
+    text-transform: capitalize;
+}
+
+
+.stats {
+    width: 90%;
+    margin: 15px auto 20px auto;
+    flex: 1;
+    padding: 16px 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 12px;
+}
+
+.stat-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.stat-container h3{
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 12px 18px;
+    transition: background-color 0.2s ease;
+}
+
+progress{
+    appearance: none;
+    -webkit-appearance: none;
+    border: none;
+}
+
+progress::-webkit-progress-bar{
+    padding: 2px;
+    border-radius: 12px;
+}
+
+progress::-webkit-progress-value{
+    border-radius: 12px;
+}
+
+.hp-bar::-webkit-progress-bar{
+    background-color: rgb(0, 53, 0);
+    border: 2px solid green;
+}
+
+.hp-bar::-webkit-progress-value{
+    background-color: rgb(0, 200, 0);
+}
+
+.attack-bar::-webkit-progress-bar{
+    background-color: rgb(53, 0, 0);
+    border: 2px solid red;
+}
+
+.attack-bar::-webkit-progress-value{
+    background-color: rgb(200, 53, 0);
+}
+
+.def-bar::-webkit-progress-bar{
+    background-color: rgb(0, 45, 72);
+    border: 2px solid blue;
+}
+
+.def-bar::-webkit-progress-value{
+    background-color: rgb(0, 149, 255);
+}
+
+.sp-atk-bar::-webkit-progress-bar{
+    background-color: rgb(100, 83, 0);
+    border: 2px solid yellow;
+}
+
+.sp-atk-bar::-webkit-progress-value{
+    background-color: rgb(255, 174, 0);
+}
+
+.sp-def-bar::-webkit-progress-bar{
+    background-color: rgb(53, 0, 53);
+    border: 2px solid purple;
+}
+
+.sp-def-bar::-webkit-progress-value{
+    background-color: rgb(138, 42, 138);
+}
+
+.speed-bar::-webkit-progress-bar{
+    background-color: rgb(0, 40, 50);
+    border: 2px solid rgb(0, 180, 216);
+}
+
+.speed-bar::-webkit-progress-value{
+    background-color: rgb(0, 225, 255);
+}
+
+.stat-bar{
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.stat-bar span{
+    width: 50px;
+    height: 36px;
+    border-radius: 12px;
+    text-align: center;
+    display: grid;
+    place-items: center;
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.stat-bar progress{
+    width: 100%;
+    height: 36px;
+}
+
+.stat-bar .hp-value{
+   color: rgb(0, 200, 0);
+}
+
+.stat-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #475569;
+}
+
+.stat-value {
+    font-size: 15px;
+    font-weight: 700;
+    color: #0f172a;
+    background-color: #e2e8f0;
+    padding: 2px 12px;
+    border-radius: 12px;
+    min-width: 42px;
+    text-align: center;
+}
+
+.hp-value{
+    background-color: rgb(0, 53, 0);
+    border: 2px solid green;
+    color: rgb(0, 175, 0);
+}
+
+.attack-value{
+    background-color: rgb(53, 0, 0);
+    border: 2px solid red;
+    color: rgb(200, 53, 0);
+}
+
+.def-value{
+    background-color: rgb(0, 45, 72);
+    border: 2px solid blue;
+    color: rgb(0, 149, 255);
+}
+
+.sp-atk-value{
+    background-color: rgb(100, 83, 0);
+    border: 2px solid yellow;
+    color: rgb(255, 174, 0);
+}
+
+.sp-def-value{
+    background-color: rgb(53, 0, 53);
+    border: 2px solid purple;
+    color: rgb(138, 42, 138);
+}
+
+.speed-value{
+    background-color: rgb(0, 40, 50);
+    border: 2px solid rgb(0, 180, 216);
+    color: rgb(0, 225, 255);
+}
