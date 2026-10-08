@@ -20,12 +20,35 @@
             $calificacion > 10 
         ) {
             echo "<p>Ingresa todos los datos y una calificacion entre 0 y 10</p>";
-        } else {
-            echo "<h2>Datos registrados</h2>";
-            echo "<p>Nombre: " . htmlspecialchars($nombre, ENT_QUOTES, "UTF-8") . "</p>";
-            echo "<p>Materia: " . htmlspecialchars($materia, ENT_QUOTES, "UTF-8") . "</p>";
-            echo "<p>Calificacion: ". $calificacion ."</p>";                
-        }
+        } 
     }
 
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <?php include 'header.php'; ?>
+    
+    <main>
+        <div>
+            <h2>Datos registrados</h2>
+            <p>Nombre:  <?= htmlspecialchars($nombre, ENT_QUOTES, "UTF-8") ?></p>
+            <p>Materia: <?= htmlspecialchars($materia, ENT_QUOTES, "UTF-8") ?></p>
+            <p>Calificacion: <?= htmlspecialchars($calificacion, ENT_QUOTES, "UTF-8") ?></p>
+        </div>
+    </main>
+
+    <?php include 'footer.php'; ?>
+</body>
+
+
+</html>

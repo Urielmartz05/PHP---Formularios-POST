@@ -1,31 +1,35 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-
-    <link rel="stylesheet" href="style.css">
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Grade App</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <form action="resultado.php" method="get">
+    <?php include 'header.php'; ?>
 
-        <label for="">Nombre</label>
-        <input type="text" name="nombre" id="nombre" required>
+    <main>
+        <div>
+            <form action="resultado.php" method="get">
 
-        <label for="">Materia</label>
-        <input type="text" name="materia" id="materia" required>
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" id="nombre" required>
 
-        <label>Calificacion</label>
-        <input type="number" name="calificacion" id="calificacion" min="0" max="10" step="0.1" required>
+                <label for="materia">Materia</label>
+                <input type="text" name="materia" id="materia" required>
 
-        <button type="submit">Enviar</button>
+                <label for="calificacion">Calificacion</label>
+                <input type="number" name="calificacion" id="calificacion" min="0" max="10" step="0.1" required>
 
-    </form>
-        
+                <button type="submit">Enviar</button>
+
+            </form>
+        </div>
+    </main>
+
+    <?php include 'footer.php'; ?>
 </body>
-
 </html>
